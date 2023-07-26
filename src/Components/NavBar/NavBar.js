@@ -4,7 +4,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../../Firebase';
 import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../UserContext';
-const NavBar = () => {
+const NavBar = ({userStatus}) => {
     const navigate = useNavigate();
     const logoutButton = (e) => {
         e.preventDefault();
@@ -19,7 +19,7 @@ const NavBar = () => {
                     <p>React App</p>
                 </div>
                 <div className="nav-login">
-                    <a href="" onClick={(e) => logoutButton(e)} style={{ textDecoration: 'none', color: 'white' }}>LogOut</a>
+                    <a href="" onClick={(e) => logoutButton(e)} style={{ textDecoration: 'none', color: 'white' }}>{userStatus?'LogOut':''}</a>
                 </div>
             </div>
         </div>

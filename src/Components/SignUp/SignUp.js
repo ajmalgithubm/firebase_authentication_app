@@ -15,7 +15,6 @@ function SignUp() {
         }
         await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
 
-            navigate('/welcome')
 
         }).catch(error => {
             alert(error)

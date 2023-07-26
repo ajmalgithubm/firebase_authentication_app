@@ -13,7 +13,7 @@ const Login =()=> {
             window.location.reload();
         }
         await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-            navigate('/welcome');
+           navigate('/welcome')
         }).catch(err => {
             alert(err.message);
         })
